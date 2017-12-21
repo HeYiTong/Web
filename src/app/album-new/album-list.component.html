@@ -1,0 +1,15 @@
+<h3>My Album</h3>
+<ul class="albums">
+    <li *ngFor="let album of albums"
+      [class.selected]="album === selectedAlbum"
+      (click)="onSelect(album)">
+      <span class="badge">{{album.id}}</span> {{album.name}}
+    </li>
+  </ul>
+  <div *ngIf="selectedAlbum">
+    <h2>
+      {{selectedAlbum.name | uppercase}} is my album
+    </h2>
+    <a routerLink="/dashboard" routerLinkActive="active">open</a> 
+    <button (click)="gotoAlbum()"> open album</button>
+  </div>

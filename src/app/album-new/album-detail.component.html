@@ -1,0 +1,10 @@
+<div *ngIf="album">
+  <h2>{{album.name}} details!</h2>
+  <div>
+    <label>id: </label>{{album.id}}</div>
+  <div>
+    <label>name: </label>
+    <input [(ngModel)]="album.name" placeholder="name" />
+  </div>
+  <button (click)="goBack()">Back</button>
+</div>

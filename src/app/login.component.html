@@ -1,0 +1,16 @@
+<h2>Login</h2>
+    <div>
+        <label>account: </label><input [(ngModel)]="Log_account.id" placeholder="id"> 
+        <label>password: </label>
+    <input [(ngModel)]="Log_account.possword" placeholder="password"> 
+    </div>
+    <button (click)="Login(Log_account)">Login</button>
+    <div>
+        <label>name: </label>
+        <div *ngIf="Online_account">
+            <h2>
+              {{Online_account.name | uppercase}} is my account
+            </h2>
+           
+        </div>
+    </div>

@@ -1,0 +1,19 @@
+<h3>The photos in {{album.id}}</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let photo of photos"  [routerLink]="['/detail', photo.photo_id]"  class="col-1-4">
+
+    <div class="module album">
+
+      <h4>{{photo.name}}</h4>
+    </div>
+    <img src="/assets/111.jpg" err-src="/111.jpg"  class="full-image"/>
+  </a>
+</div>
+
+
+
+
+
+<h4>
+  <a routerLink="/album" routerLinkActive="active">back</a>
+</h4>
