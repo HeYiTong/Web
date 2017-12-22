@@ -9,6 +9,7 @@ import { LoginComponent }      from './login.component';
 import { HeroDetailComponent }  from './hero-detail.component';
 import { AlbumDetailComponent }  from './album-new/album-detail.component';
 import { ADashboardComponent }  from './album-new/a-dashboard.component';
+import { SigninComponent } from './signin.component';
 
 
 
@@ -18,8 +19,9 @@ import { ADashboardComponent }  from './album-new/a-dashboard.component';
 //Component: 导航到此路由时，路由器需要创建的组件（HeroesComponent）。
 
 const routes: Routes = [
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: '', redirectTo: '/signin', pathMatch: 'full' },
   { path: 'login',  component: LoginComponent },  //登录
+  { path: 'signin',  component: SigninComponent },  //登录
   { path: 'album',  component: AListComponent },          
   { path: 'adashboard/:id', component: ADashboardComponent },
   { path: 'dashboard',  component: DashboardComponent },          

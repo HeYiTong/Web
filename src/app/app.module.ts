@@ -1,6 +1,6 @@
 import { NgModule }       from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
-import { FormsModule }    from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }    from '@angular/forms';
 import { LoginComponent } from './login.component';
 import { AppComponent }         from './app.component';
 import { DashboardComponent }   from './album/dashboard.component';
@@ -15,17 +15,23 @@ import { AlbumService }          from './album.service';
 import {ADashboardComponent} from './album-new/a-dashboard.component';
 
 import { AppRoutingModule }     from './app-routing.module';
+import { UserService } from '../Service/user.service';
+import { SigninComponent } from './signin.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     AppRoutingModule
   ],
   declarations: [
     LoginComponent,    //登录组件
     DashboardComponent,
     AppComponent,
+    SigninComponent,
     AListComponent,
     HeroDetailComponent,
     HeroesComponent,
@@ -35,6 +41,7 @@ import { AppRoutingModule }     from './app-routing.module';
   providers: [ 
     HeroService,
     AlbumService,
+    UserService
   ],
   bootstrap: [ AppComponent ]
 })
