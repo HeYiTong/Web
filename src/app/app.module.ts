@@ -16,7 +16,7 @@ import {ADashboardComponent} from './album-new/a-dashboard.component';
 
 import { AppRoutingModule }     from './app-routing.module';
 import { UserService } from '../Service/user.service';
-import { SigninComponent } from './signin.component';
+import { SigninComponent } from './signin/signin.component';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({

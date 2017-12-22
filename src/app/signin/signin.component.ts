@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../Service/user.service';
+import { UserService } from '../../Service/user.service';
 import {FormsModule, ReactiveFormsModule,FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 @Component({

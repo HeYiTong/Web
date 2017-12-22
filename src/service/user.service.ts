@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 
 const httpOptions = {
     headers: new HttpHeaders({
-      'Content-Type': 'application/jsonp',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8',
       'Access-Control-Allow-Origin':'http://127.0.0.1:8080',
       'Access-Control-Allow-Methods':'GET, POST'
     }),
@@ -20,7 +20,7 @@ export class UserService {
 
     validateLogin(id: string, password: string): Observable<any> {
         const userinfo = new HttpParams().set('email', id).set('password', password);
-        return this.http.get('http://localhost:8080/login?email='+userinfo.get('email')+'&'+'password='+userinfo.get('password'),httpOptions);
+        return this.http.post('http://localhost:8080/login',userinfo,httpOptions);
     }
 
 

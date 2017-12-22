@@ -9,7 +9,7 @@ import { LoginComponent }      from './login.component';
 import { HeroDetailComponent }  from './hero-detail.component';
 import { AlbumDetailComponent }  from './album-new/album-detail.component';
 import { ADashboardComponent }  from './album-new/a-dashboard.component';
-import { SigninComponent } from './signin.component';
+import { SigninComponent } from './signin/signin.component';
 
 
 
