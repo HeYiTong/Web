@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Album } from './album';
 import {Hero } from './hero';
 import { Photo } from './photo';
@@ -7,9 +8,14 @@ import { PHOTO_Y } from './mock-photos';
 import { Injectable } from '@angular/core';
 
 import { account } from './account';
+import { HttpParams } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
-export class AlbumService {               
+export class AlbumService {     
+  
+  constructor(private http: HttpClient) {}
+
   getAlbums(): Promise<Album[]> {
     return Promise.resolve(ALBUMS);            //返回指定用户所有相册
   }
@@ -32,7 +38,15 @@ export class AlbumService {
   }
   getPhoto(photo_id: number): Promise<Photo> {          //通过ID打开图片
     return this.getPhotos()
-               .then(photos => photos.find(photo => photo.photo_id === photo_id));
+               .then(photos => photos.find(photo => photo.photoid === photo_id));
+  }
+  updateAlbum(userid:string): Observable<any> {
+    const userinfo = new HttpParams().set('userid', userid);
+    return this.http.post('http://localhost:8080/albums',userinfo);
+  }
+  updatePhoto(albumid:number): Observable<any> {
+    const userinfo = new HttpParams().set('albumid', albumid.toString());
+    return this.http.post('http://localhost:8080/pics',userinfo);
   }
   
 }

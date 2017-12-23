@@ -1,9 +1,9 @@
 //照片类
 
 export class Photo {
-    user_id: number;
-    album_id: number;
-    photo_id: number;
+    userid: number;
+    albumid: number;
+    photoid: number;
     name: string;
     url: string;
   }

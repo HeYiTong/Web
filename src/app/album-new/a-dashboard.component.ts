@@ -25,6 +25,7 @@ export class ADashboardComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    
     this.route.paramMap
       .switchMap((params: ParamMap) => this.albumService.getAlbum(+params.get('id')))
       .subscribe(album => this.album = album);

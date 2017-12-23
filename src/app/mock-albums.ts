@@ -3,9 +3,9 @@
 import { Album } from './album';
 
 export const ALBUMS: Album[] = [
-  { id: 11, user_id: 1 ,name: 'yellow'},
-  { id: 12, user_id: 2, name: 'red'},
-  { id: 300, user_id: 3, name: 'black' },
-  { id: 400, user_id: 4, name: 'blue'},
+  { id: 11, userid: 1 ,name: 'yellow',description:''},
+  { id: 12, userid: 2, name: 'red',description:''},
+  { id: 300, userid: 3, name: 'black' ,description:''},
+  { id: 400, userid: 4, name: 'blue',description:''},
 
 ];

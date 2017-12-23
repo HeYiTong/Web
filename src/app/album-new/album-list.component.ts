@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 import { Album } from '../album';
 import { HeroService } from '../hero.service';
 import {AlbumService} from '../album.service';
+import { Photo } from '../photo';
+import { PHOTO_Y } from '../mock-photos';
 
 @Component({
   selector: 'my-album',
@@ -13,7 +15,7 @@ import {AlbumService} from '../album.service';
 export class AListComponent implements OnInit {        //相册导航
 
   albums: Album[] ;
-  
+  photos: Photo[] ;
   selectedAlbum: Album;
   constructor(
     private albumService: AlbumService ,
@@ -31,6 +33,12 @@ export class AListComponent implements OnInit {        //相册导航
   }
 
   gotoAlbum(): void {
+    this.albumService.updatePhoto(this.selectedAlbum.id).subscribe(photos=>{
+      this.photos=photos['data']
+      this.photos.forEach(x=>{
+        PHOTO_Y.push(x);
+      })
+  })
     this.router.navigate(['/adashboard', this.selectedAlbum.id]);
   }
 }
